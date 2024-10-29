@@ -1,1 +1,0 @@
-export const quote_url = 'https://zenquotes.io/api/quotes/';
