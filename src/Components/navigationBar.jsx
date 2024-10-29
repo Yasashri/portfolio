@@ -6,7 +6,7 @@ function navigationBar() {
   return (
  <div className="ym-nav-bar-main">
     <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#">Yasashri</Navbar.Brand>
+        <Navbar.Brand href="#">Yasashri Medagedara</Navbar.Brand>
         <Nav className="ml-auto">
           <Nav.Link href="#">Home</Nav.Link>
           <Nav.Link href="#">About</Nav.Link>

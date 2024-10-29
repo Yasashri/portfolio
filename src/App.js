@@ -6,8 +6,8 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import LandingPage from "./Components/landingPage.jsx";
-import NavBar from "./Components/navigationBar.jsx";
+import LandingPage from "./Components/LandingPage.jsx";
+import NavBar from "./Components/NavigationBar.jsx";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(

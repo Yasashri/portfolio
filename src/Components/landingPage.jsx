@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-function landingPage() {
+function LandingPage() {
+  const [quote, setQuote] = useState("Quote is loading....");
   return (
     <div className='ym-landing-page-container'>
       <div className='ym-landing-page-top'>
@@ -8,15 +9,15 @@ function landingPage() {
           <div class='profile-frame'>
             <img
               src='profile.jpg'
-              alt='Profile Image'
+              alt='Profile'
               class='profile-image'
             ></img>
           </div>
         </div>
-        <div className="ym-my-info-simple-section"></div>
+        <div className='ym-my-info-simple-section'></div>
       </div>
     </div>
   );
 }
 
-export default landingPage;
+export default LandingPage;
