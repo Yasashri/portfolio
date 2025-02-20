@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
+  color: #fff;
+  text-align: center;
+}
+
+.ym-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+
+  &__name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    min-height: 50px;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+    &.fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &.fade-out {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  &__menu {
+    display: flex;
+    gap: 15px;
+
+    &-item {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      font-weight: 400;
+
+      &:hover {
+        transform: scale(1.1);
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+/* 🔹 Responsive Design */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .ym-container {
+    &__name {
+      font-size: 2rem;
+    }
+    &__menu {
+      flex-direction: column; // Stack menu items
+      gap: 10px;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ym-container {
+    &__name {
+      font-size: 1.8rem;
+    }
+    &__menu-item {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  }
+}
+
+/* Small Mobile (like iPhone SE) */
+@media (max-width: 480px) {
+  .ym-container {
+    &__name {
+      font-size: 1.5rem;
+    }
+    &__menu-item {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+}

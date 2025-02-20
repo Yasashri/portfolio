@@ -1,42 +1,94 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
+  color: #fff;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
+  color: #fff;
+  text-align: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.ym-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+.ym-container__name {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  min-height: 50px;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.ym-container__name.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ym-container__name.fade-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.ym-container__menu {
+  display: flex;
+  gap: 15px;
+}
+.ym-container__menu-item {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  font-weight: 400;
+}
+.ym-container__menu-item:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Responsive Design */
+/* Tablets */
+@media (max-width: 1024px) {
+  .ym-container__name {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  .ym-container__menu {
+    flex-direction: column;
+    gap: 10px;
   }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Mobile */
+@media (max-width: 768px) {
+  .ym-container__name {
+    font-size: 1.8rem;
+  }
+  .ym-container__menu-item {
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 }
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* Small Mobile (like iPhone SE) */
+@media (max-width: 480px) {
+  .ym-container__name {
+    font-size: 1.5rem;
+  }
+  .ym-container__menu-item {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
 }
