@@ -1,17 +1,7 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Karla:ital,wght@0,200..800;1,200..800&family=Playwrite+IT+Moderna:wght@100..400&family=Sigmar&display=swap");
 body {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
-  color: #fff;
-  text-align: center;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Balsamiq Sans", serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
@@ -91,4 +81,22 @@ body {
     font-size: 0.9rem;
     padding: 8px 16px;
   }
+}
+.ym-contact-container {
+  visibility: hidden;
+}
+.ym-contact-container__title {
+  color: green;
+  cursor: pointer;
+}
+
+.ym-contact-container--visible {
+  visibility: visible;
+  position: absolute;
+  z-index: 1;
+  height: 200px;
+  width: 100px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
