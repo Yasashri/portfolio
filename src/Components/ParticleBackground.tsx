@@ -28,13 +28,13 @@ const ParticleBackground = () => {
           },
           links: {
             enable: true,
-            color: "#0d47a1",
+            color: "#a10d6d",
             opacity: 0.5,
             distance: 150,
           },
           move: {
             enable: true,
-            speed: 3,
+            speed: 2,
           },
         },
         interactivity: {
