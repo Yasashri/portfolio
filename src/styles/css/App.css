@@ -82,21 +82,42 @@ body {
     padding: 8px 16px;
   }
 }
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
 .ym-contact-container {
-  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  animation: scaleDown 0.3s ease-out;
 }
 .ym-contact-container__title {
   color: green;
   cursor: pointer;
 }
 
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 .ym-contact-container--visible {
   visibility: visible;
+  padding: 20px;
+  transform: scale(1);
   position: absolute;
   z-index: 1;
-  height: 200px;
-  width: 100px;
+  height: 420px;
+  width: 530px;
   background-color: white;
   border: 1px solid gray;
   border-radius: 5px;
+  animation: scaleUp 0.5s ease-out;
 }

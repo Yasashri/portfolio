@@ -20,9 +20,9 @@ function Home() {
     setContactVisible((prev) => !prev);
   };
 
-  const closeContact = () =>{
+  const closeContact = () => {
     setContactVisible(false);
-  }
+  };
 
   useEffect(() => {
     function getRandomColor(baseColor: string) {
@@ -37,7 +37,7 @@ function Home() {
       setTimeout(() => {
         setCurrentTitle((prev) => (prev + 1) % titles.length);
         setFade(true);
-        
+
         setBgColor(() => {
           const newColor1 = getRandomColor("#1e1e2f");
           const newColor2 = getRandomColor("#3a3a5f");
@@ -51,15 +51,21 @@ function Home() {
 
   return (
     <div className='ym-container' style={{ background: bgColor }}>
-      <Contact visibility={contactVisible} closeButton={closeContact}/>
+      <Contact visibility={contactVisible} closeButton={closeContact} />
       <div className={`ym-container__name ${fade ? "fade-in" : "fade-out"}`}>
         {titles[currentTitle]}
       </div>
       <div className='ym-container__menu'>
-        <div className='ym-container__menu-item ym-container__menu-item--portfolio'>
+        <div
+          className='ym-container__menu-item ym-container__menu-item--portfolio'
+          onClick={openContacts}
+        >
           Portfolio
         </div>
-        <div className='ym-container__menu-item ym-container__menu-item--resume'>
+        <div
+          className='ym-container__menu-item ym-container__menu-item--resume'
+          onClick={openContacts}
+        >
           Resume
         </div>
         <div
