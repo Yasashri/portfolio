@@ -7,7 +7,6 @@ interface ResumeProps {
 function Resume({ visibility, closeButton }: ResumeProps) {
   const [isExiting, setIsExiting] = useState(false);
   const [isMounted, setIsMounted] = useState(visibility);
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     if (visibility) {
@@ -30,16 +29,29 @@ function Resume({ visibility, closeButton }: ResumeProps) {
         isExiting ? "exit-right" : "enter-left"
       }`}
     >
-      <div
-        className="ym-contact-container__title"
-        onClick={closeButton}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {isHovered ? "Close" : "Resume"}
+      <div className='ym-contact-container__title'>
+        <div className='ym-upper-section'>
+          <div className='ym-upper-section__title'>
+            <h3>Resume</h3>
+          </div>
+          <div className='ym-upper-section__buttons'>
+            <a
+              href='/src/assets/Yasashri.pdf'
+              download='Yasashri_Resume.pdf'
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Download Resume (pdf)
+            </a>
+            <p onClick={closeButton}>Close</p>
+          </div>
+        </div>
       </div>
-      <div className="ym-contact-container__card">
-        <div className="ym-contact-container__card-data"></div>
+      <div className='ym-contact-container__card'>
+        <div className='ym-contact-container__card-data'>
+          <div className='resume'>
+            <img src='/src/assets/cvimg.jpg' alt='' />
+          </div>
+        </div>
       </div>
     </div>
   );

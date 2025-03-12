@@ -26,10 +26,12 @@
   position: absolute;
   z-index: 1;
   height: 420px;
-  width: 530px;
+  width: 800px;
   background-color: white;
   border: 1px solid gray;
   border-radius: 5px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .enter-left {
@@ -45,11 +47,20 @@
   cursor: pointer;
   font-size: 18px;
   font-weight: bold;
+  .ym-upper-section {
+    display: flex;
+    justify-content: space-between;
+    h3,
+    p {
+      margin: 0;
+    }
+    .ym-upper-section__buttons{
+      display: flex;
+    }
+  }
 }
 
 .ym-contact-container__card {
-  margin-top: 20px;
-  padding: 15px;
   background-color: #f5f5f5;
   border-radius: 5px;
 }
@@ -58,4 +69,9 @@
   height: 100px;
   background-color: #ddd;
   border-radius: 5px;
+  .resume {
+    img {
+      width: 100%;
+    }
+  }
 }
