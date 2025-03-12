@@ -1,28 +1,45 @@
-import { useState } from "react";
-
-interface contacts {
+import { useState, useEffect } from "react";
+interface ResumeProps {
   visibility: boolean;
   closeButton: () => void;
 }
 
-function Resume({ visibility, closeButton }: contacts) {
+function Resume({ visibility, closeButton }: ResumeProps) {
+  const [isExiting, setIsExiting] = useState(false);
+  const [isMounted, setIsMounted] = useState(visibility);
   const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (visibility) {
+      setIsMounted(true);
+      setIsExiting(false);
+    } else {
+      setIsExiting(true);
+      setTimeout(() => {
+        setIsMounted(false);
+        setIsExiting(false);
+      }, 400);
+    }
+  }, [visibility]);
+
+  if (!isMounted) return null;
+
   return (
     <div
-      className={
-        visibility ? "ym-contact-container--visible" : "ym-contact-container"
-      }
+      className={`ym-contact-container ${
+        isExiting ? "exit-right" : "enter-left"
+      }`}
     >
       <div
-        className='ym-contact-container__title'
+        className="ym-contact-container__title"
         onClick={closeButton}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {isHovered ? "Close" : "Contact"}
+        {isHovered ? "Close" : "Resume"}
       </div>
-      <div className='ym-contact-container__card'>
-        <div className='ym-contact-container__card-data'></div>
+      <div className="ym-contact-container__card">
+        <div className="ym-contact-container__card-data"></div>
       </div>
     </div>
   );
