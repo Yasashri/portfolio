@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
-import ParticleBackground from "../Components/ParticleBackground";
-import Contact from "../Components/Contact";
-import Resume from "../Components/Resume";
-import Portfolio from "../Components/Portfolio";
+import ParticleBackground from "../components/ParticleBackground";
+import Contact from "../components/Contact";
+import Resume from "../components/Resume";
+import Portfolio from "../components/Portfolio";
 
 const titles = [
   "I am Yasashri Medagedara",
