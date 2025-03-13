@@ -50,6 +50,25 @@ body {
   transform: scale(1.1);
   background: rgba(255, 255, 255, 0.2);
 }
+.ym-container .yms-link-set {
+  display: flex;
+  margin-top: 15px;
+}
+.ym-container .yms-link-set--data {
+  margin-right: 10px;
+  display: flex;
+  align-items: baseline;
+}
+.ym-container .yms-link-set--data a {
+  margin-left: 5px;
+  text-decoration: none;
+}
+.ym-container .yms-link-set--data a:visited {
+  color: #0000ee;
+}
+.ym-container .yms-link-set--data a:hover {
+  text-decoration: underline;
+}
 
 /* 🔹 Responsive Design */
 /* Tablets */

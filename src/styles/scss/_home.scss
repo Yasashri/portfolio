@@ -44,6 +44,25 @@
       }
     }
   }
+  .yms-link-set {
+    display: flex;
+    margin-top: 15px;
+    &--data {
+      margin-right: 10px;
+      display: flex;
+      align-items: baseline;
+      a {
+        margin-left: 5px;
+        text-decoration: none;
+        &:visited {
+          color: #0000ee;
+        }
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 
 /* 🔹 Responsive Design */
