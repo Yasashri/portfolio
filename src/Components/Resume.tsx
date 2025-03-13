@@ -53,7 +53,7 @@ function Resume({ visibility, closeButton }: ResumeProps) {
       <div className='ym-contact-container__card'>
         <div className='ym-contact-container__card-data'>
           <div className='resume'>
-            <img src='/public/cvimg.jpg' alt='' />
+            <img src='public/cvimg.jpg' alt='' />
           </div>
         </div>
       </div>
