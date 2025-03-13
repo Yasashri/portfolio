@@ -78,7 +78,7 @@ body {
   }
   .ym-container__menu {
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
   }
 }
 /* Mobile */
@@ -89,18 +89,22 @@ body {
   .ym-container__menu-item {
     font-size: 1rem;
     padding: 10px 20px;
+    width: 200px;
+    text-align: center;
   }
 }
 /* Small Mobile (like iPhone SE) */
-@media (max-width: 480px) {
-  .ym-container__name {
-    font-size: 1.5rem;
+/* @media (max-width: 480px) {
+  .ym-container {
+    &__name {
+      font-size: 1.5rem;
+    }
+    &__menu-item {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
   }
-  .ym-container__menu-item {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-  }
-}
+} */
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);
@@ -304,4 +308,26 @@ body {
 .ym-contact-container__card-data .ym-contact-data .ym-contact-list li:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .ym-container {
+    /* justify-content: unset; */
+    /*  align-items: unset; */
+  }
+  .ym-container .yms-link-set {
+    display: none;
+  }
+  .ym-container .ym-contact-container {
+    display: unset;
+    width: unset;
+    height: 100%;
+    padding: 10px;
+  }
+  .ym-container .ym-contact-container .ym-contact-container__title {
+    margin: 10px 10px 0 0;
+  }
+  .ym-container .ym-contact-container .ym-contact-container__card .ym-contact-container__card-data .ym-section-title {
+    margin-left: 20px;
+  }
 }

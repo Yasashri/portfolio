@@ -60,7 +60,7 @@
       .download {
         margin-right: 10px;
       }
-      .close{
+      .close {
         color: red;
       }
     }
@@ -221,6 +221,32 @@
         &:hover {
           transform: scale(1.05);
           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ym-container {
+    .yms-link-set {
+      display: none;
+    }
+    /* justify-content: unset; */
+    /*  align-items: unset; */
+    .ym-contact-container {
+      display: unset;
+      width: unset;
+      height: 100%;
+      padding: 10px;
+      .ym-contact-container__title {
+        margin: 10px 10px 0 0;
+      }
+      .ym-contact-container__card {
+        .ym-contact-container__card-data {
+          .ym-section-title {
+            margin-left: 20px;
+          }
         }
       }
     }

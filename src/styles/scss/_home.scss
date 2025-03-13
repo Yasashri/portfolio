@@ -57,7 +57,7 @@
         &:visited {
           color: #0000ee;
         }
-        &:hover{
+        &:hover {
           text-decoration: underline;
         }
       }
@@ -75,7 +75,7 @@
     }
     &__menu {
       flex-direction: column; // Stack menu items
-      gap: 10px;
+      gap: 20px;
     }
   }
 }
@@ -89,12 +89,14 @@
     &__menu-item {
       font-size: 1rem;
       padding: 10px 20px;
+      width: 200px;
+      text-align: center;
     }
   }
 }
 
 /* Small Mobile (like iPhone SE) */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .ym-container {
     &__name {
       font-size: 1.5rem;
@@ -104,4 +106,4 @@
       padding: 8px 16px;
     }
   }
-}
+} */
