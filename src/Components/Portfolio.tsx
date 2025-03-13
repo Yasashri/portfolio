@@ -66,7 +66,7 @@ function Portfolio({ visibility, closeButton }: ResumeProps) {
           title: item.title,
           link: item.link,
           pubDate: item.pubDate,
-          contentSnippet: item.description.replace(/<img[^>]*>/g, ""), // Remove images
+          contentSnippet: item.description.replace(/<img[^>]*>/g, ""),
         }));
 
         setPosts(fetchedPosts);
