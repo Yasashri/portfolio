@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
-import ParticleBackground from "../components/ParticleBackground";
-import Contact from "../components/Contact";
-import Resume from "../components/Resume";
-import Portfolio from "../components/Portfolio";
+import ParticleBackground from "../Components/ParticleBackground";
+import Contact from "../Components/Contact";
+import Resume from "../Components/Resume";
+import Portfolio from "../Components/Portfolio";
 import { Facebook, Github, Linkedin, Globe } from "lucide-react";
 
 const titles = [
