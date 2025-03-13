@@ -44,6 +44,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   font-weight: 400;
+  border: 1px solid gray;
 }
 .ym-container__menu-item:hover {
   transform: scale(1.1);
@@ -106,7 +107,7 @@ body {
   padding: 20px;
   position: absolute;
   z-index: 1;
-  height: 420px;
+  height: calc(100vh - 100px);
   width: 800px;
   background-color: white;
   border: 1px solid gray;
@@ -128,6 +129,7 @@ body {
   cursor: pointer;
   font-size: 18px;
   font-weight: bold;
+  text-align: end;
 }
 .ym-contact-container__title .ym-upper-section {
   display: flex;
@@ -140,17 +142,147 @@ body {
 .ym-contact-container__title .ym-upper-section .ym-upper-section__buttons {
   display: flex;
 }
+.ym-contact-container__title .ym-upper-section .ym-upper-section__buttons .download {
+  margin-right: 10px;
+}
+.ym-contact-container__title .ym-upper-section .ym-upper-section__buttons .close {
+  color: red;
+}
 
 .ym-contact-container__card {
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   border-radius: 5px;
 }
 
 .ym-contact-container__card-data {
-  height: 100px;
+  /* height: 100px;
   background-color: #ddd;
-  border-radius: 5px;
+  border-radius: 5px; */
 }
 .ym-contact-container__card-data .resume img {
   width: 100%;
+}
+.ym-contact-container__card-data .ym-portfolio-data {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+.ym-contact-container__card-data .ym-portfolio-box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+.ym-contact-container__card-data .ym-portfolio-box:hover {
+  transform: translateY(-5px);
+}
+.ym-contact-container__card-data .ym-portfolio-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.ym-contact-container__card-data .ym-portfolio-snippet {
+  display: -webkit-box;
+  line-clamp: 5;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 120px;
+}
+.ym-contact-container__card-data .ym-portfolio-date {
+  font-size: 12px;
+  color: #777;
+}
+.ym-contact-container__card-data .ym-portfolio-box a {
+  display: block;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.ym-contact-container__card-data .ym-portfolio-box a:hover {
+  text-decoration: underline;
+}
+.ym-contact-container__card-data .ym-section-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.ym-contact-container__card-data .ym-github-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+.ym-contact-container__card-data .ym-github-box {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+.ym-contact-container__card-data .ym-github-box:hover {
+  transform: translateY(-5px);
+}
+.ym-contact-container__card-data .ym-github-box h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.ym-contact-container__card-data .ym-github-info {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+.ym-contact-container__card-data .ym-github-box a {
+  display: block;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.ym-contact-container__card-data .ym-github-box a:hover {
+  text-decoration: underline;
+}
+.ym-contact-container__card-data .ym-contact-data {
+  margin-top: 40px;
+}
+.ym-contact-container__card-data .ym-contact-data .ym-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
+  gap: 20px;
+}
+.ym-contact-container__card-data .ym-contact-data .ym-contact-list li {
+  background-color: #f4f4f4;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ym-contact-container__card-data .ym-contact-data .ym-contact-list li svg {
+  margin-right: 12px;
+  color: #3498db;
+}
+.ym-contact-container__card-data .ym-contact-data .ym-contact-list li a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.ym-contact-container__card-data .ym-contact-data .ym-contact-list li a:hover {
+  text-decoration: underline;
+}
+.ym-contact-container__card-data .ym-contact-data .ym-contact-list li strong {
+  color: #333;
+  font-weight: 600;
+}
+.ym-contact-container__card-data .ym-contact-data .ym-contact-list li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }

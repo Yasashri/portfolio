@@ -35,14 +35,18 @@ function Resume({ visibility, closeButton }: ResumeProps) {
             <h3>Resume</h3>
           </div>
           <div className='ym-upper-section__buttons'>
-            <a
-              href='/src/assets/Yasashri.pdf'
-              download='Yasashri_Resume.pdf'
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Download Resume (pdf)
-            </a>
-            <p onClick={closeButton}>Close</p>
+            <div className='download'>
+              <a
+                href='/src/assets/Yasashri.pdf'
+                download='Yasashri_Resume.pdf'
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Download Resume (pdf)
+              </a>
+            </div>
+            <div className='close'>
+              <p onClick={closeButton}>Close</p>
+            </div>
           </div>
         </div>
       </div>

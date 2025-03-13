@@ -46,7 +46,7 @@ const Home = () => {
         <div className="ym-container__menu">
           <div
             className="ym-container__menu-item ym-container__menu-item--portfolio"
-            onClick={() => toggleComponent("contact")}
+            onClick={() => toggleComponent("portfolio")}
           >
             Portfolio
           </div>
@@ -58,7 +58,7 @@ const Home = () => {
           </div>
           <div
             className="ym-container__menu-item ym-container__menu-item--contact"
-            onClick={() => toggleComponent("portfolio")}
+            onClick={() => toggleComponent("contact")}
           >
             Contact
           </div>
