@@ -1,28 +1,61 @@
-import { useState } from "react";
-
-interface contacts {
+import { useState, useEffect } from "react";
+interface ResumeProps {
   visibility: boolean;
   closeButton: () => void;
 }
 
-function Resume({ visibility, closeButton }: contacts) {
-  const [isHovered, setIsHovered] = useState(false);
+function Resume({ visibility, closeButton }: ResumeProps) {
+  const [isExiting, setIsExiting] = useState(false);
+  const [isMounted, setIsMounted] = useState(visibility);
+
+  useEffect(() => {
+    if (visibility) {
+      setIsMounted(true);
+      setIsExiting(false);
+    } else {
+      setIsExiting(true);
+      setTimeout(() => {
+        setIsMounted(false);
+        setIsExiting(false);
+      }, 400);
+    }
+  }, [visibility]);
+
+  if (!isMounted) return null;
+
   return (
     <div
-      className={
-        visibility ? "ym-contact-container--visible" : "ym-contact-container"
-      }
+      className={`ym-contact-container ${
+        isExiting ? "exit-right" : "enter-left"
+      }`}
     >
-      <div
-        className='ym-contact-container__title'
-        onClick={closeButton}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {isHovered ? "Close" : "Contact"}
+      <div className='ym-contact-container__title'>
+        <div className='ym-upper-section'>
+          <div className='ym-upper-section__title'>
+            <h3>Resume</h3>
+          </div>
+          <div className='ym-upper-section__buttons'>
+            <div className='download'>
+              <a
+                href='/src/assets/Yasashri.pdf'
+                download='Yasashri_Resume.pdf'
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Download Resume (pdf)
+              </a>
+            </div>
+            <div className='close'>
+              <p onClick={closeButton}>Close</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div className='ym-contact-container__card'>
-        <div className='ym-contact-container__card-data'></div>
+        <div className='ym-contact-container__card-data'>
+          <div className='resume'>
+            <img src='/src/assets/cvimg.jpg' alt='' />
+          </div>
+        </div>
       </div>
     </div>
   );

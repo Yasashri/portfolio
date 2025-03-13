@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  padding: 20px;
 
   &__name {
     font-size: 2.5rem;
@@ -37,10 +36,30 @@
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       font-weight: 400;
+      border: 1px solid gray;
 
       &:hover {
         transform: scale(1.1);
         background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+  .yms-link-set {
+    display: flex;
+    margin-top: 15px;
+    &--data {
+      margin-right: 10px;
+      display: flex;
+      align-items: baseline;
+      a {
+        margin-left: 5px;
+        text-decoration: none;
+        &:visited {
+          color: #0000ee;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -56,7 +75,7 @@
     }
     &__menu {
       flex-direction: column; // Stack menu items
-      gap: 10px;
+      gap: 20px;
     }
   }
 }
@@ -70,12 +89,14 @@
     &__menu-item {
       font-size: 1rem;
       padding: 10px 20px;
+      width: 200px;
+      text-align: center;
     }
   }
 }
 
 /* Small Mobile (like iPhone SE) */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .ym-container {
     &__name {
       font-size: 1.5rem;
@@ -85,4 +106,4 @@
       padding: 8px 16px;
     }
   }
-}
+} */
