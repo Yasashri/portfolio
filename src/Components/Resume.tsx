@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { HiOutlineArrowCircleLeft } from "react-icons/hi";
 interface ResumeProps {
   visibility: boolean;
   closeButton: () => void;
@@ -33,8 +34,6 @@ function Resume({ visibility, closeButton }: ResumeProps) {
         <div className='ym-upper-section'>
           <div className='ym-upper-section__title'>
             <h3>Resume</h3>
-          </div>
-          <div className='ym-upper-section__buttons'>
             <div className='download'>
               <a
                 href='Yasashri.pdf'
@@ -44,8 +43,13 @@ function Resume({ visibility, closeButton }: ResumeProps) {
                 Download Resume (pdf)
               </a>
             </div>
+          </div>
+
+          <div className='ym-upper-section__buttons'>
             <div className='close'>
-              <p onClick={closeButton}>Close</p>
+              <p onClick={closeButton}>
+                <HiOutlineArrowCircleLeft />
+              </p>
             </div>
           </div>
         </div>

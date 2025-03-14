@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { HiOutlineArrowCircleLeft } from "react-icons/hi";
 interface ResumeProps {
   visibility: boolean;
   closeButton: () => void;
@@ -42,7 +42,7 @@ function Portfolio({ visibility, closeButton }: ResumeProps) {
     if (visibility) {
       setIsMounted(true);
       setIsExiting(false);
-      fetchPosts();
+      
       fetchGitHubRepos();
     } else {
       setIsExiting(true);
@@ -53,7 +53,8 @@ function Portfolio({ visibility, closeButton }: ResumeProps) {
     }
   }, [visibility]);
 
-  // Fetch Medium Posts
+  useEffect(() => {
+    // Fetch Medium Posts
   const fetchPosts = async () => {
     try {
       const response = await fetch(
@@ -75,6 +76,11 @@ function Portfolio({ visibility, closeButton }: ResumeProps) {
       console.error("Error fetching Medium posts:", error);
     }
   };
+  fetchPosts();
+  }, [])
+  
+
+  
 
   // Fetch GitHub Repositories
   const fetchGitHubRepos = async () => {
@@ -106,7 +112,7 @@ function Portfolio({ visibility, closeButton }: ResumeProps) {
       }`}
     >
       <div className='ym-contact-container__title' onClick={closeButton}>
-        Close
+      <HiOutlineArrowCircleLeft />
       </div>
       <div className='ym-contact-container__card'>
         <div className='ym-contact-container__card-data'>
@@ -135,7 +141,7 @@ function Portfolio({ visibility, closeButton }: ResumeProps) {
           </div>
 
           {/* GitHub Projects */}
-          <h2 className='ym-section-title'>GitHub Projects</h2>
+          <h2 className='ym-section-title'>GitHub</h2>
           <div className='ym-github-projects'>
             {repos.length > 0 ? (
               repos.map((repo, index) => (
