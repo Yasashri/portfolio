@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Mail, Phone, Facebook, Github, Linkedin, Globe } from "lucide-react";
+import { HiOutlineArrowCircleLeft } from "react-icons/hi";
 
 interface ContactsProps {
   visibility: boolean;
@@ -35,7 +36,7 @@ function Contact({ visibility, closeButton }: ContactsProps) {
         className='ym-contact-container__title'
         onClick={closeButton}
       >
-        {"Close"}
+        <HiOutlineArrowCircleLeft />
       </div>
       <div className='ym-contact-container__card'>
         <div className='ym-contact-container__card-data'>
