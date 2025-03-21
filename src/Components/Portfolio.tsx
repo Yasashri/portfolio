@@ -86,7 +86,7 @@ function Portfolio({ visibility, closeButton }: ResumeProps) {
   const fetchGitHubRepos = async () => {
     try {
       const response = await fetch(
-        "https://api.github.com/users/Yasashri/repos?sort=updated"
+        "https://api.github.com/users/Yasashri/repos"
       );
       const data = await response.json();
 
