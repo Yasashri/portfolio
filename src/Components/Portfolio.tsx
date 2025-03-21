@@ -90,7 +90,7 @@ function Portfolio({ visibility, closeButton }: ResumeProps) {
       );
       const data = await response.json();
 
-      const fetchedRepos = data.slice(0, 3).map((repo: GitHubRepo) => ({
+      const fetchedRepos = data.map((repo: GitHubRepo) => ({
         name: repo.name,
         html_url: repo.html_url,
         description: repo.description || "No description available",
