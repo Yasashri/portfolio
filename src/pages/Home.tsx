@@ -1,143 +1,49 @@
-import { useState, useEffect, useCallback } from "react";
 import ParticleBackground from "../Components/ParticleBackground";
-import Contact from "../Components/Contact";
-import Resume from "../Components/Resume";
-import Portfolio from "../Components/Portfolio";
-import { Facebook, Github, Linkedin, Globe } from "lucide-react";
-
-const titles = [
-  "I am Yasashri Medagedara",
-  "A Software Developer",
-  "A Gamer",
-  "A Traveller",
-];
-
+import { FaFacebookF, FaMediumM, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { SiGumroad, SiAmazon } from "react-icons/si";
 const Home = () => {
-  const [currentTitle, setCurrentTitle] = useState(0);
-  const [fade, setFade] = useState(true);
-  const [visibleComponent, setVisibleComponent] = useState<
-    "contact" | "resume" | "portfolio" | null
-  >(null);
-  const [loading, setLoading] = useState(true);
-
-  const toggleComponent = useCallback(
-    (component: "contact" | "resume" | "portfolio") => {
-      setVisibleComponent((prev) => (prev === component ? null : component));
-    },
-    []
-  );
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentTitle((prev) => (prev + 1) % titles.length);
-        setFade(true);
-      }, 500);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div style={{ position: "relative", height: "100vh" }}>
-      {loading ? (
-        <div className='loading-screen'>
-          <div className='loading-spinner'></div>
-          <p style={{ marginLeft: 10 }}>Welcome..</p>
+      <ParticleBackground />
+       <section className="home">
+      <div className="home__profile">
+        <div className="home__avatar-container">
+          <img
+            src="my.jpg"
+            alt="My Profile"
+            className="home__avatar"
+          />
+          <span className="home__status-dot" />
         </div>
-      ) : (
-        <>
-          <ParticleBackground />
-          <div className='ym-container'>
-            <Contact
-              visibility={visibleComponent === "contact"}
-              closeButton={() => setVisibleComponent(null)}
-            />
-            <Resume
-              visibility={visibleComponent === "resume"}
-              closeButton={() => setVisibleComponent(null)}
-            />
-            <Portfolio
-              visibility={visibleComponent === "portfolio"}
-              closeButton={() => setVisibleComponent(null)}
-            />
-            <div
-              className={`ym-container__name ${fade ? "fade-in" : "fade-out"}`}
-            >
-              {titles[currentTitle]}
-            </div>
 
-            <div className='ym-container__menu'>
-              <div
-                className='ym-container__menu-item ym-container__menu-item--portfolio'
-                onClick={() => toggleComponent("portfolio")}
-              >
-                Portfolio
-              </div>
-              <div
-                className='ym-container__menu-item ym-container__menu-item--resume'
-                onClick={() => toggleComponent("resume")}
-              >
-                Resume
-              </div>
-              <div
-                className='ym-container__menu-item ym-container__menu-item--contact'
-                onClick={() => toggleComponent("contact")}
-              >
-                Contact
-              </div>
-            </div>
-            <div className='yms-link-set'>
-              <div className='yms-link-set--data'>
-                <Github size={20} />
-                <a
-                  href='https://github.com/Yasashri'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  GitHub
-                </a>
-              </div>
-              <div className='yms-link-set--data'>
-                <Globe size={20} />
-                <a
-                  href='https://medium.com/@ymedagedara'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Medium
-                </a>
-              </div>
-              <div className='yms-link-set--data'>
-                <Facebook size={20} />
-                <a
-                  href='https://www.facebook.com/yasashri/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Facebook
-                </a>
-              </div>
-              <div className='yms-link-set--data'>
-                <Linkedin size={20} />
-                <a
-                  href='https://www.linkedin.com/in/yasashri/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  LinkedIn
-                </a>
-              </div>
-            </div>
+        <div className="home__details">
+          <h1 className="home__name">Yasashri Medagedara</h1>
+          <p className="home__description">
+            Software Engineer | React & Laravel Developer | Passionate about creating elegant, accessible interfaces.
+          </p>
+          <div className="home__socials">
+            <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF />
+            </a>
+            <a href="https://medium.com/@yourprofile" target="_blank" rel="noopener noreferrer">
+              <FaMediumM />
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+              <FaLinkedinIn />
+            </a>
+            <a href="https://amazon.com/yourstore" target="_blank" rel="noopener noreferrer">
+              <SiAmazon />
+            </a>
+            <a href="https://gumroad.com/yourstore" target="_blank" rel="noopener noreferrer">
+              <SiGumroad />
+            </a>
           </div>
-        </>
-      )}
+        </div>
+      </div>
+    </section>
     </div>
   );
 };

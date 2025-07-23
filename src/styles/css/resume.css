@@ -1,0 +1,71 @@
+.resume-section {
+  background-color: #121212;
+  padding: 3rem 1rem;
+  color: #fff;
+}
+.resume-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 1rem;
+}
+.resume-section .header {
+  text-align: center;
+}
+.resume-section .header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.resume-section .header .location,
+.resume-section .header .contact {
+  font-size: 1rem;
+  color: #bbb;
+}
+.resume-section .header .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.resume-section .header .links a {
+  color: #00ff99;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.resume-section .header .links a:hover {
+  text-decoration: underline;
+}
+.resume-section .section {
+  margin-top: 2rem;
+}
+.resume-section .section h2 {
+  font-size: 1.5rem;
+  color: #00ff99;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.5rem;
+}
+.resume-section .section ul {
+  padding-left: 1.2rem;
+}
+.resume-section .section ul li {
+  margin-bottom: 0.5rem;
+}
+.resume-section .section .skills li {
+  margin: 0.5rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resume-section .header h1 {
+    font-size: 2rem;
+  }
+  .resume-section .container {
+    padding: 0 1rem;
+  }
+  .resume-section .links {
+    flex-direction: column;
+    align-items: center;
+  }
+}

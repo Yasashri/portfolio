@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 
 body {
   font-family: "Source Sans 3", serif;
   margin: 0;
   padding: 0;
- /*  background: linear-gradient(135deg, #1e1e2f, #3a3a5f);
-  color: #fff;
-  text-align: center; */
+  background-color: #121212;
+  color: #ffffff;
+  text-align: center;
 }
 
 @import "./home";
 @import "./contact";
+@import "./navbar";

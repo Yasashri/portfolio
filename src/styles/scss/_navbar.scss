@@ -1,0 +1,106 @@
+$bg-color: #1e1e1e;
+$text-color: #e0e0e0;
+$accent-color: #00bfff;
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+$mobile-breakpoint: 768px;
+
+.navbar {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 1rem 2rem;
+  position: absolute;
+  width: 40%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  box-shadow: $shadow;
+  border-radius: 30px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $accent-color;
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+
+    &--open {
+      display: flex;
+    }
+  }
+
+  &__item {
+    // Reserved for custom styling if needed
+  }
+
+  &__link {
+    color: $text-color;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom 0.3s;
+
+    &:hover {
+      color: $accent-color;
+      border-bottom: 2px solid $accent-color;
+    }
+
+    &--active {
+      color: $accent-color;
+      border-bottom: 2px solid $accent-color;
+    }
+  }
+
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  &__bar {
+    width: 25px;
+    height: 3px;
+    background-color: $text-color;
+    border-radius: 2px;
+  }
+
+  //Responsive Styles
+  @media (max-width: $mobile-breakpoint) {
+    &__toggle {
+      display: flex;
+    }
+
+    &__links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: $bg-color;
+      width: 200px;
+      padding: 1rem;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+      border-radius: 0 0 8px 8px;
+    }
+
+    &__link {
+      padding: 0.75rem 0;
+    }
+  }
+}
