@@ -1,6 +1,7 @@
 import ParticleBackground from "../Components/ParticleBackground";
 import { FaFacebookF, FaMediumM, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { SiGumroad, SiAmazon } from "react-icons/si";
+import "../styles/scss/home.scss";
 const Home = () => {
   return (
     <div style={{ position: "relative", height: "100vh" }}>

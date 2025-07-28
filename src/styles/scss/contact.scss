@@ -1,0 +1,113 @@
+$bg-color: #1e1e1e;
+$text-color: #e0e0e0;
+$accent-color: #00ff8b;
+$shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+
+.contact {
+  background-color: $bg-color;
+  min-height: 100vh;
+  color: $text-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    background-color: #252525;
+    box-shadow: $shadow;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: $accent-color;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+
+  &__methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__input,
+  &__textarea {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #181818;
+    color: $text-color;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+    resize: none;
+
+    &:focus {
+      border: 1.5px solid $accent-color;
+    }
+  }
+
+  &__button {
+    background: $accent-color;
+    color: #181818;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: lighten($accent-color, 10%);
+    }
+  }
+
+  &__success {
+    margin-top: 1rem;
+    color: $accent-color;
+    font-size: 1rem;
+  }
+
+  &__whatsapp {
+    margin-top: 1rem;
+  }
+
+  &__whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #25d366;
+    color: #181818;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s;
+
+    &:hover {
+      background: darken(#25d366, 10%);
+      color: #fff;
+    }
+
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+}

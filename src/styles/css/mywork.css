@@ -1,0 +1,118 @@
+.loader {
+  color: #00ff99;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.error {
+  color: #ff4d4f;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.mywork-section {
+  background-color: #121212;
+  padding: 3rem 1rem;
+  color: #fff;
+}
+.mywork-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 1rem;
+}
+.mywork-section .header {
+  text-align: center;
+}
+.mywork-section .header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.mywork-section .header .subtitle {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+.mywork-section .mywork-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.mywork-section .mywork-card {
+  background: #181818;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  padding: 1.5rem 1.2rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background 0.2s;
+  outline: none;
+  border: 2px solid transparent;
+}
+.mywork-section .mywork-card:hover, .mywork-section .mywork-card:focus {
+  box-shadow: 0 4px 16px rgba(0, 255, 153, 0.18);
+  border-color: #00ff99;
+  background: #202020;
+}
+.mywork-section .mywork-card .mywork-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mywork-section .mywork-card .mywork-header h2 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #00ff99;
+}
+.mywork-section .mywork-card .mywork-header .mywork-toggle {
+  font-size: 1.2rem;
+  color: #00ff99;
+  margin-left: 1rem;
+  user-select: none;
+}
+.mywork-section .mywork-card .mywork-content {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+.mywork-section .mywork-card .mywork-content ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+.mywork-section .mywork-card .mywork-content ul li {
+  margin-bottom: 1rem;
+}
+.mywork-section .mywork-card .mywork-content ul li a {
+  color: #00ff99;
+  text-decoration: none;
+  font-weight: bold;
+  transition: text-decoration 0.2s;
+}
+.mywork-section .mywork-card .mywork-content ul li a:hover {
+  text-decoration: underline;
+}
+.mywork-section .mywork-card .mywork-content ul li .repo-desc,
+.mywork-section .mywork-card .mywork-content ul li .book-desc {
+  color: #bbb;
+  font-size: 0.95rem;
+  margin-left: 0.5rem;
+}
+.mywork-section .mywork-card.expanded {
+  background: #222;
+  box-shadow: 0 6px 24px rgba(0, 255, 153, 0.1);
+  border-color: #00ff99;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mywork-section .header h1 {
+    font-size: 2rem;
+  }
+  .mywork-section .container {
+    padding: 0 0.5rem;
+  }
+  .mywork-section .mywork-card {
+    padding: 1rem 0.7rem;
+  }
+}

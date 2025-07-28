@@ -1,15 +1,17 @@
 import { useState } from "react";
-
+import { useLocation } from "react-router-dom";
+import "../styles/scss/navbar.scss";
 const Navbar: React.FC = () => {
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [activeLink, setActiveLink] = useState<string>("#home");
-
+  
+console.log("Location:", location.pathname);
   const toggleMenu = (): void => {
     setMenuOpen((prev) => !prev);
   };
 
-  const handleLinkClick = (hash: string): void => {
-    setActiveLink(hash);
+  const handleLinkClick = (): void => {
+    
     setMenuOpen(false);
   };
 
@@ -21,45 +23,45 @@ const Navbar: React.FC = () => {
         <ul className={`navbar__links ${menuOpen ? "navbar__links--open" : ""}`}>
           <li className="navbar__item">
             <a
-              href="#home"
-              onClick={() => handleLinkClick("#home")}
-              className={`navbar__link ${activeLink === "#home" ? "navbar__link--active" : ""}`}
+              href="/"
+              onClick={() => handleLinkClick()}
+              className={`navbar__link ${location.pathname === "/" ? "navbar__link--active" : ""}`}
             >
               Home
             </a>
           </li>
           <li className="navbar__item">
             <a
-              href="#projects"
-              onClick={() => handleLinkClick("#projects")}
-              className={`navbar__link ${activeLink === "#projects" ? "navbar__link--active" : ""}`}
+              href="/my-work"
+              onClick={() => handleLinkClick()}
+              className={`navbar__link ${location.pathname === "/my-work" ? "navbar__link--active" : ""}`}
             >
-              Projects
+              My Work
             </a>
           </li>
           <li className="navbar__item">
             <a
               href="/resume"
-              onClick={() => handleLinkClick("#resume")}
-              className={`navbar__link ${activeLink === "#resume" ? "navbar__link--active" : ""}`}
+              onClick={() => handleLinkClick()}
+              className={`navbar__link ${location.pathname === "/resume" ? "navbar__link--active" : ""}`}
             >
               Resume
             </a>
           </li>
           <li className="navbar__item">
             <a
-              href="#stories"
-              onClick={() => handleLinkClick("#stories")}
-              className={`navbar__link ${activeLink === "#stories" ? "navbar__link--active" : ""}`}
+              href="/stories"
+              onClick={() => handleLinkClick()}
+              className={`navbar__link ${location.pathname === "/stories" ? "navbar__link--active" : ""}`}
             >
-              Stories
+             Project Stories
             </a>
           </li>
           <li className="navbar__item">
             <a
-              href="#contact"
-              onClick={() => handleLinkClick("#contact")}
-              className={`navbar__link ${activeLink === "#contact" ? "navbar__link--active" : ""}`}
+              href="/contact"
+              onClick={() => handleLinkClick()}
+              className={`navbar__link ${location.pathname === "/contact" ? "navbar__link--active" : ""}`}
             >
               Contact
             </a>

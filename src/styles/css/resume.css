@@ -19,6 +19,7 @@
 .resume-section .header .location,
 .resume-section .header .contact {
   font-size: 1rem;
+  min-height: unset;
   color: #bbb;
 }
 .resume-section .header .links {
