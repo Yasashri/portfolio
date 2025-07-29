@@ -1,3 +1,6 @@
+@use "sass:color";
+
+
 $bg-color: #1e1e1e;
 $text-color: #e0e0e0;
 $accent-color: #00ff8b;
@@ -74,7 +77,8 @@ $shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     transition: background 0.2s;
 
     &:hover {
-      background: lighten($accent-color, 10%);
+      /* background: lighten($accent-color, 10%); */
+      background: color.adjust($accent-color, $lightness: 10%);
     }
   }
 
@@ -102,7 +106,8 @@ $shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     transition: background 0.2s;
 
     &:hover {
-      background: darken(#25d366, 10%);
+      background: color.scale(#25d366, $lightness: -20.564516129%);
+      /* background: darken(#25d366, 10%); */
       color: #fff;
     }
 

@@ -29,6 +29,10 @@ $mobile-breakpoint: 768px;
     font-size: 1.5rem;
     font-weight: bold;
     color: $accent-color;
+    a{
+      text-decoration: none;
+      color: $accent-color;
+    }
   }
 
   &__links {
@@ -84,6 +88,17 @@ $mobile-breakpoint: 768px;
   @media (max-width: $mobile-breakpoint) {
     &__toggle {
       display: flex;
+      .navbar__close-btn {
+        background: $accent-color;
+        color: #1e1e1e;
+        border-radius: 50%;
+        padding: 0.4em;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
     }
 
     &__links {
@@ -91,16 +106,41 @@ $mobile-breakpoint: 768px;
       flex-direction: column;
       position: absolute;
       top: 100%;
-      right: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90vw;
+      min-width: 260px;
+      max-width: 400px;
+      padding: 1rem 1rem;
       background-color: $bg-color;
-      width: 200px;
-      padding: 1rem;
       box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
-      border-radius: 0 0 8px 8px;
+      border-radius: 0 0 18px 18px;
+      z-index: 999;
     }
-
+    &__links--open {
+      display: flex !important;
+    }
+    &__item {
+      width: 85%;
+      margin-bottom: 0.5rem;
+    }
     &__link {
-      padding: 0.75rem 0;
+      display: block;
+      width: 100%;
+      padding: 1.2rem 1.5rem; // Larger touch area
+      font-size: 1.18rem;
+      background: rgba(0, 191, 255, 0.12);
+      border-radius: 10px;
+      color: $text-color;
+      text-align: left;
+      transition: background 0.2s, color 0.2s;
+      border-bottom: none;
+
+      &:hover,
+      &--active {
+        background: $accent-color;
+        color: #1e1e1e;
+      }
     }
   }
 }

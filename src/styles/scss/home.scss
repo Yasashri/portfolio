@@ -4,6 +4,8 @@ $text-color: #e0e0e0;
 $accent-color: #00ff8b;
 $shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 
+// ...existing code...
+
 .home {
   background-color: $bg-color;
   min-height: 100vh;
@@ -11,6 +13,7 @@ $shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 
   &__profile {
     display: flex;
@@ -18,6 +21,7 @@ $shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     align-items: center;
     text-align: center;
     max-width: 600px;
+    width: 100%;
     padding: 2rem;
     box-shadow: $shadow;
     border-radius: 20px;
@@ -52,8 +56,13 @@ $shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   }
 
   @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
   }
 
   &__name {
@@ -74,13 +83,94 @@ $shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
     gap: 1rem;
     justify-content: center;
     font-size: 1.5rem;
+    .home__social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text-color;
+      transition: background 0.3s, color 0.3s;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      background: rgba(0, 255, 139, 0.08);
+      font-size: 1.5em;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
 
+      &:hover,
+      &:focus {
+        background: $accent-color;
+        color: #252525;
+        outline: none;
+      }
+
+      .home__social-name {
+        display: none;
+      }
+    }
     a {
       color: $text-color;
       transition: color 0.3s;
 
       &:hover {
         color: $accent-color;
+      }
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 600px) {
+    padding: 0.5rem;
+
+    &__profile {
+      padding: 1rem;
+      max-width: 95vw;
+      box-shadow: none;
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+
+    &__avatar-container {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 0.75rem;
+    }
+
+    &__name {
+      font-size: 1.3rem;
+    }
+
+    &__description {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    &__socials {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.8rem;
+      font-size: 1.2rem;
+
+      .home__social-link {
+        border-radius: 12px;
+        width: 100%;
+        min-width: 180px;
+        height: 56px;
+        justify-content: flex-start;
+        padding: 0 1.2rem;
+        background: rgba(0, 255, 139, 0.12);
+        font-size: 1.3em;
+        box-sizing: border-box;
+
+        .home__social-name {
+          display: inline-block;
+          margin-left: 1rem;
+          font-size: 1em;
+          color: $accent-color;
+          font-weight: 500;
+        }
       }
     }
   }

@@ -61,6 +61,7 @@
   transition: background 0.2s;
 }
 .contact__button:hover {
+  /* background: lighten($accent-color, 10%); */
   background: rgb(51, 255, 162.2);
 }
 .contact__success {
@@ -85,7 +86,8 @@
   transition: background 0.2s;
 }
 .contact__whatsapp-btn:hover {
-  background: rgb(29.3911290323, 167.6088709677, 81.0241935484);
+  background: rgb(29.3911290323, 167.6088709678, 81.0241935484);
+  /* background: darken(#25d366, 10%); */
   color: #fff;
 }
 .contact__whatsapp-btn svg {

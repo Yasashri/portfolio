@@ -40,7 +40,7 @@ const MyWork = () => {
         .then(res => res.json())
         .then(data => {
           if (data.items) {
-            setMediumPosts(data.items.map((item: any) => ({
+            setMediumPosts(data.items.map((item: MediumPost) => ({
               title: item.title,
               link: item.link,
             })));
@@ -60,7 +60,7 @@ const MyWork = () => {
         .then(res => res.json())
         .then(data => {
           if (Array.isArray(data)) {
-            setGithubRepos(data.map((repo: any) => ({
+            setGithubRepos(data.map((repo: GithubRepo) => ({
               name: repo.name,
               html_url: repo.html_url,
               description: repo.description || "",

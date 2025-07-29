@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "../styles/scss/navbar.scss";
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -18,7 +19,7 @@ console.log("Location:", location.pathname);
   return (
     <nav className="navbar">
       <div className="navbar__container">
-        <div className="navbar__logo">Yasashri</div>
+        <div className="navbar__logo"><a href="/">Yasashri</a></div>
 
         <ul className={`navbar__links ${menuOpen ? "navbar__links--open" : ""}`}>
           <li className="navbar__item">
@@ -69,9 +70,15 @@ console.log("Location:", location.pathname);
         </ul>
 
         <div className="navbar__toggle" onClick={toggleMenu}>
-          <span className="navbar__bar"></span>
-          <span className="navbar__bar"></span>
-          <span className="navbar__bar"></span>
+          {menuOpen ? (
+            <span className="navbar__close-btn">
+              <FaTimes />
+            </span>
+          ) : (
+            <span className="navbar__close-btn">
+              <FaBars />
+            </span>
+          )}
         </div>
       </div>
     </nav>
