@@ -3,7 +3,18 @@ import { FaFacebookF, FaMediumM, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { TbBrandFiverr } from "react-icons/tb";
 import { SiAmazon } from "react-icons/si";
 import "../styles/scss/home.scss";
+import Loader from "../Components/Loader";
+import { useEffect, useState } from "react";
 const Home = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div style={{ position: "relative", height: "100vh" }}>
       <ParticleBackground />
