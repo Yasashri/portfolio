@@ -129,7 +129,7 @@ const MyWork = () => {
             </div>
             {openSection === "medium" && (
               <div className='mywork-content'>
-                {mediumLoading && <div className='loader'>Loading...</div>}
+                {mediumLoading && <div className='my-loader'>Loading...</div>}
                 {mediumError && <div className='error'>{mediumError}</div>}
                 {!mediumLoading && !mediumError && (
                   <ul>
@@ -170,7 +170,7 @@ const MyWork = () => {
             </div>
             {openSection === "github" && (
               <div className='mywork-content'>
-                {githubLoading && <div className='loader'>Loading...</div>}
+                {githubLoading && <div className='my-loader'>Loading...</div>}
                 {githubError && <div className='error'>{githubError}</div>}
                 {!githubLoading && !githubError && (
                   <ul>

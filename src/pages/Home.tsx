@@ -5,6 +5,7 @@ import { SiAmazon } from "react-icons/si";
 import "../styles/scss/home.scss";
 import Loader from "../Components/Loader";
 import { useEffect, useState } from "react";
+
 const Home = () => {
   const [loading, setLoading] = useState(true);
 
@@ -12,11 +13,10 @@ const Home = () => {
     const timer = setTimeout(() => setLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
-  if (loading) {
-    return <Loader />;
-  }
+
   return (
     <div style={{ position: "relative", height: "100vh" }}>
+      {loading && <Loader />}
       <ParticleBackground />
       <section className='home'>
         <div className='home__profile'>
@@ -24,7 +24,6 @@ const Home = () => {
             <img src='my.jpg' alt='My Profile' className='home__avatar' />
             <span className='home__status-dot' />
           </div>
-
           <div className='home__details'>
             <h1 className='home__name'>Yasashri Medagedara</h1>
             <p className='home__description'>
