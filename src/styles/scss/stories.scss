@@ -92,6 +92,9 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .stories-section{
+    padding: 5rem 1rem;
+  }
   .stories-section .header h1 {
     font-size: 2rem;
   }

@@ -2,7 +2,7 @@ $bg-color: #1e1e1e;
 $text-color: #e0e0e0;
 $accent-color: #00bfff;
 $shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-$mobile-breakpoint: 768px;
+$mobile-breakpoint: 1248px;
 
 .navbar {
   background-color: $bg-color;
@@ -29,7 +29,7 @@ $mobile-breakpoint: 768px;
     font-size: 1.5rem;
     font-weight: bold;
     color: $accent-color;
-    a{
+    a {
       text-decoration: none;
       color: $accent-color;
     }
@@ -44,6 +44,7 @@ $mobile-breakpoint: 768px;
 
     &--open {
       display: flex;
+      margin-top: 10px;
     }
   }
 

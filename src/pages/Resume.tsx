@@ -1,9 +1,11 @@
 import "../styles/scss/resume.scss";
 import { FaWhatsapp } from "react-icons/fa";
+import ScrollToTopButton from "../Components/ScrollToTopButton";
 
 const Resume = () => {
   return (
     <section className='resume-section'>
+      <ScrollToTopButton />
       <div className='container'>
         <div className='header'>
           <h1>Yasashri Medagedara</h1>
@@ -20,6 +22,16 @@ const Resume = () => {
               +94 766521099
             </a>
           </p>
+           <p className='contact-mobile'>
+            <a href='tel:+886967372006'>📞 Call</a> &nbsp;| &nbsp;
+            <a href='mailto:ymedagedara@gmail.com'>✉️ Email</a>
+            &nbsp;|&nbsp;
+            <FaWhatsapp />
+            &nbsp;
+            <a href='https://wa.me/94766521099' target='_blank'>
+              Whatsapp
+            </a>
+          </p>
           <div className='links'>
             <a
               href='/Yasashri_Medagedara_cv.pdf'
@@ -28,7 +40,7 @@ const Resume = () => {
             >
               Download Professional Resume (PDF)
             </a>
-            <span> | </span>
+            <span className="cvseparator"> | </span>
             <a
               href='/Yasashri_Medagedara_academic_cv.pdf'
               target='_blank'
@@ -109,6 +121,9 @@ const Resume = () => {
               <strong>Databases:</strong> MySQL, MongoDB, PostgreSQL
             </li>
             <li>
+              <strong>CMS:</strong> Wordpress, Joomla
+            </li>
+            <li>
               <strong>Tools:</strong> Git, Bitbucket, Figma, Adobe XD
             </li>
             <li>
@@ -145,7 +160,7 @@ const Resume = () => {
           <h2>AWARDS & ACTIVITIES</h2>
           <ul>
             <li>
-              1st Rank in all island chess champpionship in 2009 (1st board)
+              1st Rank in all island chess championship in 2009 (1st board)
             </li>
             <li>
               Captain – School Chess Team – Led the team in national and

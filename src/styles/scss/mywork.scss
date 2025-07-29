@@ -12,7 +12,6 @@
   text-align: center;
 }
 
-// ...existing code...
 
 .mywork-section {
   background-color: #121212;
@@ -125,6 +124,9 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .mywork-section{
+    padding: 5rem 1rem;
+  }
   .mywork-section .header h1 {
     font-size: 2rem;
   }
@@ -134,4 +136,5 @@
   .mywork-section .mywork-card {
     padding: 1rem 0.7rem;
   }
+  
 }

@@ -2,12 +2,14 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { PATH } from "./config/Constants";
 import { Home } from "./config/Imports";
 import "./styles/css/App.css";
+import 'react-toastify/dist/ReactToastify.css';
 import "font-awesome/css/font-awesome.min.css";
 import Navbar from "./Components/NavBar";
 import Resume from "./pages/Resume";
 import Contact from "./pages/Contact";
 import Stories from "./pages/Stories";
 import MyWork from "./pages/MyWork";
+import Footer from "./Components/Footer";
 
 // Layout component with Navbar
 function Layout() {
@@ -15,6 +17,7 @@ function Layout() {
     <>
       <Navbar />
       <Outlet />
+      <Footer />
     </>
   );
 }

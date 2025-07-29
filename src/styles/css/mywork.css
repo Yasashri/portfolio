@@ -106,6 +106,9 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .mywork-section {
+    padding: 5rem 1rem;
+  }
   .mywork-section .header h1 {
     font-size: 2rem;
   }

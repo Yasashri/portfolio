@@ -1,6 +1,5 @@
 @use "sass:color";
 
-
 $bg-color: #1e1e1e;
 $text-color: #e0e0e0;
 $accent-color: #00ff8b;
@@ -13,6 +12,7 @@ $shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 50px;
 
   &__container {
     background-color: #252525;
@@ -113,6 +113,15 @@ $shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 
     svg {
       font-size: 1.5rem;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .contact {
+    padding-top: unset;
+    &__container {
+      background-color: unset;
+      box-shadow: unset;
     }
   }
 }

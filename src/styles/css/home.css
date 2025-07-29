@@ -34,8 +34,8 @@
 }
 .home__status-dot {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 7px;
+  right: 6px;
   width: 16px;
   height: 16px;
   background-color: #00ff8b;
@@ -143,7 +143,13 @@
     display: inline-block;
     margin-left: 1rem;
     font-size: 1em;
-    color: #00ff8b;
     font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home__status-dot {
+    bottom: 0px;
+    right: 2px;
   }
 }

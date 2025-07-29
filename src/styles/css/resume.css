@@ -3,6 +3,9 @@
   padding: 3rem 1rem;
   color: #fff;
 }
+.resume-section .contact-mobile {
+  display: none;
+}
 .resume-section .container {
   max-width: 900px;
   margin: 0 auto;
@@ -23,6 +26,7 @@
   color: #bbb;
   margin-top: 0;
   margin-bottom: 5px;
+  padding-top: unset;
 }
 .resume-section .header .location a,
 .resume-section .header .contact a {
@@ -70,6 +74,22 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .resume-section {
+    padding: 5rem 1rem;
+  }
+  .resume-section .contact-mobile {
+    display: block;
+  }
+  .resume-section .contact-mobile a {
+    text-decoration: none;
+    color: blue;
+  }
+  .resume-section .contact-mobile a:hover {
+    color: #00ff99;
+  }
+  .resume-section .contact {
+    display: none;
+  }
   .resume-section .header h1 {
     font-size: 2rem;
   }
@@ -79,5 +99,8 @@
   .resume-section .links {
     flex-direction: column;
     align-items: center;
+  }
+  .resume-section .links .cvseparator {
+    display: none;
   }
 }

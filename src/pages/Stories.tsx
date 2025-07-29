@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/scss/stories.scss";
 import { stories } from "../Components/MyStories";
+import ScrollToTopButton from "../Components/ScrollToTopButton";
 
 
 const Stories = () => {
@@ -12,6 +13,7 @@ const Stories = () => {
 
   return (
     <section className="stories-section">
+      <ScrollToTopButton />
       <div className="container">
         <div className="header">
           <h1>Project Stories</h1>

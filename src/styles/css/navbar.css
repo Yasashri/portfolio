@@ -36,6 +36,7 @@
 }
 .navbar__links--open {
   display: flex;
+  margin-top: 10px;
 }
 .navbar__link {
   color: #e0e0e0;
@@ -65,7 +66,7 @@
   background-color: #e0e0e0;
   border-radius: 2px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1248px) {
   .navbar__toggle {
     display: flex;
   }
