@@ -1,0 +1,120 @@
+.resume-section {
+  background-color: #121212;
+  padding: 3rem 1rem;
+  color: #fff;
+  .contact-mobile {
+    display: none;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 1rem;
+  }
+
+  .header {
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .location,
+    .contact {
+      font-size: 1rem;
+      min-height: unset;
+      color: #bbb;
+      margin-top: 0;
+      margin-bottom: 5px;
+      padding-top: unset;
+      a {
+        text-decoration: none;
+        color: white;
+        &:hover {
+          color: #00ff99;
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+
+      a {
+        color: #00ff99;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .section {
+    margin-top: 2rem;
+
+    h2 {
+      font-size: 1.5rem;
+      color: #00ff99;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .skills {
+      li {
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resume-section {
+    padding: 5rem 1rem;
+    .contact-mobile {
+      display: block;
+      a {
+        text-decoration: none;
+        color: blue;
+        &:hover {
+          color: #00ff99;
+        }
+      }
+    }
+    .contact {
+      display: none;
+    }
+  }
+  .resume-section .header h1 {
+    font-size: 2rem;
+  }
+
+  .resume-section .container {
+    padding: 0 1rem;
+  }
+
+  .resume-section .links {
+    flex-direction: column;
+    align-items: center;
+
+    .cvseparator {
+      display: none;
+    }
+  }
+}

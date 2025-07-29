@@ -1,0 +1,93 @@
+.stories-section {
+  background-color: #121212;
+  padding: 3rem 1rem;
+  color: #fff;
+}
+.stories-section .container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 1rem;
+}
+.stories-section .header {
+  text-align: center;
+}
+.stories-section .header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.stories-section .header .subtitle {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-bottom: 2rem;
+}
+.stories-section .stories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.stories-section .story-card {
+  background: #181818;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  padding: 1.5rem 1.2rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background 0.2s;
+  outline: none;
+  border: 2px solid transparent;
+}
+.stories-section .story-card:hover, .stories-section .story-card:focus {
+  box-shadow: 0 4px 16px rgba(0, 255, 153, 0.18);
+  border-color: #00ff99;
+  background: #202020;
+}
+.stories-section .story-card .story-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.stories-section .story-card .story-header h2 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #00ff99;
+}
+.stories-section .story-card .story-header .story-toggle {
+  font-size: 1.2rem;
+  color: #00ff99;
+  margin-left: 1rem;
+  user-select: none;
+}
+.stories-section .story-card .story-subtitle {
+  color: #bbb;
+  font-size: 1rem;
+  margin: 0.5rem 0 0.8rem 0;
+}
+.stories-section .story-card .story-content {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+.stories-section .story-card .story-content p {
+  margin-bottom: 1rem;
+}
+.stories-section .story-card.expanded {
+  background: #222;
+  box-shadow: 0 6px 24px rgba(0, 255, 153, 0.1);
+  border-color: #00ff99;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stories-section {
+    padding: 5rem 1rem;
+  }
+  .stories-section .header h1 {
+    font-size: 2rem;
+  }
+  .stories-section .container {
+    padding: 0 0.5rem;
+  }
+  .stories-section .story-card {
+    padding: 1rem 0.7rem;
+  }
+}

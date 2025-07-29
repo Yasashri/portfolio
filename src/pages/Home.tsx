@@ -1,143 +1,84 @@
-import { useState, useEffect, useCallback } from "react";
 import ParticleBackground from "../Components/ParticleBackground";
-import Contact from "../Components/Contact";
-import Resume from "../Components/Resume";
-import Portfolio from "../Components/Portfolio";
-import { Facebook, Github, Linkedin, Globe } from "lucide-react";
-
-const titles = [
-  "I am Yasashri Medagedara",
-  "A Software Developer",
-  "A Gamer",
-  "A Traveller",
-];
-
+import { FaFacebookF, FaMediumM, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { TbBrandFiverr } from "react-icons/tb";
+import { SiAmazon } from "react-icons/si";
+import "../styles/scss/home.scss";
 const Home = () => {
-  const [currentTitle, setCurrentTitle] = useState(0);
-  const [fade, setFade] = useState(true);
-  const [visibleComponent, setVisibleComponent] = useState<
-    "contact" | "resume" | "portfolio" | null
-  >(null);
-  const [loading, setLoading] = useState(true);
-
-  const toggleComponent = useCallback(
-    (component: "contact" | "resume" | "portfolio") => {
-      setVisibleComponent((prev) => (prev === component ? null : component));
-    },
-    []
-  );
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false);
-      setTimeout(() => {
-        setCurrentTitle((prev) => (prev + 1) % titles.length);
-        setFade(true);
-      }, 500);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div style={{ position: "relative", height: "100vh" }}>
-      {loading ? (
-        <div className='loading-screen'>
-          <div className='loading-spinner'></div>
-          <p style={{ marginLeft: 10 }}>Welcome..</p>
-        </div>
-      ) : (
-        <>
-          <ParticleBackground />
-          <div className='ym-container'>
-            <Contact
-              visibility={visibleComponent === "contact"}
-              closeButton={() => setVisibleComponent(null)}
-            />
-            <Resume
-              visibility={visibleComponent === "resume"}
-              closeButton={() => setVisibleComponent(null)}
-            />
-            <Portfolio
-              visibility={visibleComponent === "portfolio"}
-              closeButton={() => setVisibleComponent(null)}
-            />
-            <div
-              className={`ym-container__name ${fade ? "fade-in" : "fade-out"}`}
-            >
-              {titles[currentTitle]}
-            </div>
+      <ParticleBackground />
+      <section className='home'>
+        <div className='home__profile'>
+          <div className='home__avatar-container'>
+            <img src='my.jpg' alt='My Profile' className='home__avatar' />
+            <span className='home__status-dot' />
+          </div>
 
-            <div className='ym-container__menu'>
-              <div
-                className='ym-container__menu-item ym-container__menu-item--portfolio'
-                onClick={() => toggleComponent("portfolio")}
+          <div className='home__details'>
+            <h1 className='home__name'>Yasashri Medagedara</h1>
+            <p className='home__description'>
+              Software Engineer | React & Laravel Developer | Passionate about
+              creating elegant, accessible interfaces.
+            </p>
+            <div className='home__socials'>
+              <a
+                href='https://www.facebook.com/yasashri/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='home__social-link'
               >
-                Portfolio
-              </div>
-              <div
-                className='ym-container__menu-item ym-container__menu-item--resume'
-                onClick={() => toggleComponent("resume")}
+                <FaFacebookF />
+                <span className='home__social-name'>Facebook</span>
+              </a>
+              <a
+                href='https://medium.com/@ymedagedara'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='home__social-link'
               >
-                Resume
-              </div>
-              <div
-                className='ym-container__menu-item ym-container__menu-item--contact'
-                onClick={() => toggleComponent("contact")}
+                <FaMediumM />
+                <span className='home__social-name'>Medium</span>
+              </a>
+              <a
+                href='https://github.com/Yasashri'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='home__social-link'
               >
-                Contact
-              </div>
-            </div>
-            <div className='yms-link-set'>
-              <div className='yms-link-set--data'>
-                <Github size={20} />
-                <a
-                  href='https://github.com/Yasashri'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  GitHub
-                </a>
-              </div>
-              <div className='yms-link-set--data'>
-                <Globe size={20} />
-                <a
-                  href='https://medium.com/@ymedagedara'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Medium
-                </a>
-              </div>
-              <div className='yms-link-set--data'>
-                <Facebook size={20} />
-                <a
-                  href='https://www.facebook.com/yasashri/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  Facebook
-                </a>
-              </div>
-              <div className='yms-link-set--data'>
-                <Linkedin size={20} />
-                <a
-                  href='https://www.linkedin.com/in/yasashri/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  LinkedIn
-                </a>
-              </div>
+                <FaGithub />
+                <span className='home__social-name'>GitHub</span>
+              </a>
+              <a
+                href='https://www.linkedin.com/in/yasashri/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='home__social-link'
+              >
+                <FaLinkedinIn />
+                <span className='home__social-name'>LinkedIn</span>
+              </a>
+              <a
+                href='https://www.amazon.com/dp/B0FJR93HJ4'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='home__social-link'
+              >
+                <SiAmazon />
+                <span className='home__social-name'>Amazon</span>
+              </a>
+              <a
+                href='https://www.fiverr.com/yasasmedagedara'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='home__social-link'
+              >
+                <TbBrandFiverr />
+                <span className='home__social-name'>Fiverr</span>
+              </a>
             </div>
           </div>
-        </>
-      )}
+        </div>
+      </section>
     </div>
   );
 };
