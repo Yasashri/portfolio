@@ -37,7 +37,7 @@ console.log("Location:", location.pathname);
               onClick={() => handleLinkClick()}
               className={`navbar__link ${location.pathname === "/my-work" ? "navbar__link--active" : ""}`}
             >
-              My Work
+              My work
             </a>
           </li>
           <li className="navbar__item">
@@ -55,7 +55,7 @@ console.log("Location:", location.pathname);
               onClick={() => handleLinkClick()}
               className={`navbar__link ${location.pathname === "/stories" ? "navbar__link--active" : ""}`}
             >
-             Project Stories
+             Project stories
             </a>
           </li>
           <li className="navbar__item">

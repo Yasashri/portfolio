@@ -21,6 +21,17 @@
   font-size: 1rem;
   min-height: unset;
   color: #bbb;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.resume-section .header .location a,
+.resume-section .header .contact a {
+  text-decoration: none;
+  color: white;
+}
+.resume-section .header .location a:hover,
+.resume-section .header .contact a:hover {
+  color: #00ff99;
 }
 .resume-section .header .links {
   display: flex;

@@ -1,6 +1,7 @@
 import ParticleBackground from "../Components/ParticleBackground";
 import { FaFacebookF, FaMediumM, FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { SiGumroad, SiAmazon } from "react-icons/si";
+import { TbBrandFiverr } from "react-icons/tb";
+import { SiAmazon } from "react-icons/si";
 import "../styles/scss/home.scss";
 const Home = () => {
   return (
@@ -21,7 +22,7 @@ const Home = () => {
             </p>
             <div className='home__socials'>
               <a
-                href='https://facebook.com/yourprofile'
+                href='https://www.facebook.com/yasashri/'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='home__social-link'
@@ -30,7 +31,7 @@ const Home = () => {
                 <span className='home__social-name'>Facebook</span>
               </a>
               <a
-                href='https://medium.com/@yourprofile'
+                href='https://medium.com/@ymedagedara'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='home__social-link'
@@ -39,7 +40,7 @@ const Home = () => {
                 <span className='home__social-name'>Medium</span>
               </a>
               <a
-                href='https://github.com/yourusername'
+                href='https://github.com/Yasashri'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='home__social-link'
@@ -48,7 +49,7 @@ const Home = () => {
                 <span className='home__social-name'>GitHub</span>
               </a>
               <a
-                href='https://linkedin.com/in/yourprofile'
+                href='https://www.linkedin.com/in/yasashri/'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='home__social-link'
@@ -57,7 +58,7 @@ const Home = () => {
                 <span className='home__social-name'>LinkedIn</span>
               </a>
               <a
-                href='https://amazon.com/yourstore'
+                href='https://www.amazon.com/dp/B0FJR93HJ4'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='home__social-link'
@@ -66,13 +67,13 @@ const Home = () => {
                 <span className='home__social-name'>Amazon</span>
               </a>
               <a
-                href='https://gumroad.com/yourstore'
+                href='https://www.fiverr.com/yasasmedagedara'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='home__social-link'
               >
-                <SiGumroad />
-                <span className='home__social-name'>Gumroad</span>
+                <TbBrandFiverr />
+                <span className='home__social-name'>Fiverr</span>
               </a>
             </div>
           </div>
