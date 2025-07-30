@@ -1,50 +1,124 @@
-# React + TypeScript + Vite
+# 💼 Yasashri Medagedara Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio web application for **Yasashri Medagedara**, a full-stack software engineer specializing in **React.js**, **TypeScript**, and **Laravel**. This site showcases professional experience, technical skills, open-source work, writing, and major projects.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Features
 
-## Expanding the ESLint configuration
+- **🏠 Home** – Introduction with avatar, animated status, and social links (Facebook, Medium, GitHub, LinkedIn, Amazon, Fiverr)
+- **📄 Resume** – Downloadable professional and academic CVs with experience, skills, education, certifications, and awards
+- **🧑‍💻 My Work** – Interactive cards for Medium articles, GitHub repositories, and Amazon books
+- **📖 Stories** – Case studies and retrospectives (Creative Tribe, Pitarata.nz, Rural Food Store Ordering System)
+- **📬 Contact** – Direct contact options via phone, email, and WhatsApp
+- **📱 Responsive Design** – Optimized for desktop and mobile
+- **♿ Accessibility** – Keyboard navigation, semantic markup, clear touch areas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+**Frontend:**
+- React.js
+- TypeScript
+- Sass / SCSS
+- CSS Modules
+
+**Backend (featured projects):**
+- Laravel (PHP)
+- Node.js
+
+**UI/UX:**
+- Figma
+- Adobe XD
+
+**Icons:**
+- React Icons
+- Font Awesome
+
+**Deployment:**
+- Vercel
+- GoDaddy
+- Freeparking.nz
+
+**Other:**
+- Stripe
+- Vimeo
+- MySQL
+- MongoDB
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── App.tsx
+├── main.tsx
+├── Components/
+│   ├── Footer.tsx
+│   ├── Loader.tsx
+│   ├── MyStories.tsx
+│   ├── NavBar.tsx
+│   ├── ParticleBackground.tsx
+│   └── ScrollToTopButton.tsx
+├── config/
+│   ├── Constants.ts
+│   └── Imports.ts
+├── pages/
+│   ├── Home.tsx
+│   ├── Resume.tsx
+│   ├── MyWork.tsx
+│   ├── Contact.tsx
+│   └── Stories.tsx
+├── assets/
+│   ├── Developer.json
+│   ├── react.svg
+├── styles/
+│   ├── css/
+│   └── scss/
+public/
+├── cvimg.jpg
+├── my.jpg
+├── vite.svg
+├── Yasashri_Medagedara_cv.pdf
+└── Yasashri_Medagedara_academic_cv.pdf
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 🚀 Run Locally
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Yasashri/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   ```
+   http://localhost:5173
+   ```
+
+---
+
+## 📬 Contact
+
+- 📧 Email: [ymedagedara@gmail.com](mailto:ymedagedara@gmail.com)  
+- 📞 WhatsApp: [+94 766521099](https://wa.me/94766521099)  
+- 💼 LinkedIn: [yasashri](https://linkedin.com/in/yasashri)  
+- 💻 Fiverr: [yasasmedagedara](https://www.fiverr.com/yasasmedagedara)  
+
+---
+
+Built with ❤️ by [Yasashri Medagedara](https://tinyurl.com/yasashri)
