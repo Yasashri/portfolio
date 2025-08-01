@@ -30,7 +30,6 @@ A personal portfolio web application for **Yasashri Medagedara**, a full-stack s
 
 **UI/UX:**
 - Figma
-- Adobe XD
 
 **Icons:**
 - React Icons
@@ -38,14 +37,7 @@ A personal portfolio web application for **Yasashri Medagedara**, a full-stack s
 
 **Deployment:**
 - Vercel
-- GoDaddy
-- Freeparking.nz
-
-**Other:**
-- Stripe
-- Vimeo
-- MySQL
-- MongoDB
+- Lanka Host
 
 ---
 
