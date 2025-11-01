@@ -1,5 +1,5 @@
 import ParticleBackground from "../Components/ParticleBackground";
-import { FaFacebookF, FaMediumM, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaMediumM, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { TbBrandFiverr } from "react-icons/tb";
 import { SiBehance } from "react-icons/si";
 import "../styles/scss/home.scss";
@@ -22,14 +22,14 @@ const Home = () => {
         <div className='home__profile'>
           <div className='home__avatar-container'>
             <img src='my.jpg' alt='My Profile' className='home__avatar' />
-            <span className='home__status-dot' aria-hidden="true" />
+            {/* <span className='home__status-dot' aria-hidden="true" /> */}
             <span className='sr-only'>Available</span>
           </div>
           <div className='home__details'>
             <h1 className='home__name'>Yasashri Medagedara</h1>
             <p className='home__description'>
-              Software Engineer | React & Laravel Developer | Passionate about
-              creating elegant, accessible interfaces.
+              Software Engineer | React & Laravel Developer | Crafting elegant
+              interfaces and secure, scalable APIs
             </p>
             <div className='home__socials'>
               {/* <a

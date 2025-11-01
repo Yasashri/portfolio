@@ -112,20 +112,18 @@ const MyWork = () => {
         <div className='mywork-list'>
           {/* Medium Posts */}
           <article className={`mywork-card${openSection === "medium" ? " expanded" : ""}`}>
-            <header className='mywork-header'>
-              <button
-                id='medium-toggle'
-                className='mywork-toggle-button'
-                aria-controls='medium-panel'
-                aria-expanded={openSection === "medium"}
-                onClick={() => handleToggle("medium")}
-              >
-                <h2>Medium Blog Posts</h2>
-                <span className='toggle-icon' aria-hidden>
-                  {openSection === "medium" ? "▲" : "▼"}
-                </span>
-              </button>
-            </header>
+            <button
+              id='medium-toggle'
+              className='mywork-toggle-button'
+              aria-controls='medium-panel'
+              aria-expanded={openSection === "medium"}
+              onClick={() => handleToggle("medium")}
+            >
+              <h2>Medium Blog Posts</h2>
+              <span className='toggle-icon' aria-hidden>
+                {openSection === "medium" ? "▲" : "▼"}
+              </span>
+            </button>
             <div
               id='medium-panel'
               role='region'
@@ -158,20 +156,18 @@ const MyWork = () => {
           </article>
           {/* GitHub Repos */}
           <article className={`mywork-card${openSection === "github" ? " expanded" : ""}`}>
-            <header className='mywork-header'>
-              <button
-                id='github-toggle'
-                className='mywork-toggle-button'
-                aria-controls='github-panel'
-                aria-expanded={openSection === "github"}
-                onClick={() => handleToggle("github")}
-              >
-                <h2>GitHub Public Repos</h2>
-                <span className='toggle-icon' aria-hidden>
-                  {openSection === "github" ? "▲" : "▼"}
-                </span>
-              </button>
-            </header>
+            <button
+              id='github-toggle'
+              className='mywork-toggle-button'
+              aria-controls='github-panel'
+              aria-expanded={openSection === "github"}
+              onClick={() => handleToggle("github")}
+            >
+              <h2>GitHub Public Repos</h2>
+              <span className='toggle-icon' aria-hidden>
+                {openSection === "github" ? "▲" : "▼"}
+              </span>
+            </button>
             <div
               id='github-panel'
               role='region'
@@ -205,20 +201,18 @@ const MyWork = () => {
           </article>
           {/* Amazon Books */}
           <article className={`mywork-card${openSection === "amazon" ? " expanded" : ""}`}>
-            <header className='mywork-header'>
-              <button
-                id='amazon-toggle'
-                className='mywork-toggle-button'
-                aria-controls='amazon-panel'
-                aria-expanded={openSection === "amazon"}
-                onClick={() => handleToggle("amazon")}
-              >
-                <h2>Amazon Books</h2>
-                <span className='toggle-icon' aria-hidden>
-                  {openSection === "amazon" ? "▲" : "▼"}
-                </span>
-              </button>
-            </header>
+            <button
+              id='amazon-toggle'
+              className='mywork-toggle-button'
+              aria-controls='amazon-panel'
+              aria-expanded={openSection === "amazon"}
+              onClick={() => handleToggle("amazon")}
+            >
+              <h2>Amazon Books</h2>
+              <span className='toggle-icon' aria-hidden>
+                {openSection === "amazon" ? "▲" : "▼"}
+              </span>
+            </button>
             <div
               id='amazon-panel'
               role='region'

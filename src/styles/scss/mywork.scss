@@ -50,28 +50,37 @@
     background: #181818;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.18);
-    padding: 1.5rem 1.2rem;
-    cursor: default; // card itself is not the interactive element anymore
-    transition: box-shadow 0.2s, background 0.2s;
+    padding: 0; // Remove padding from card
+    transition: all 0.2s ease;
     outline: none;
     border: 2px solid transparent;
+    overflow: hidden; // Ensure content doesn't overflow rounded corners
 
-    &:hover, &:focus {
-      box-shadow: 0 4px 16px rgba(0,255,153,0.18);
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,255,153,0.24);
       border-color: #00ff99;
       background: #202020;
     }
 
-    .mywork-header {
+    .mywork-toggle-button {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      border: none;
+      padding: 1.5rem 1.2rem; // Move padding to button
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      color: white;
 
       .mywork-toggle-button {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
+        min-height: 3rem;
         background: transparent;
         border: none;
         padding: 0;
@@ -90,18 +99,30 @@
           color: #00ff99;
           margin-left: 1rem;
           user-select: none;
-          margin-left: 1rem;
+          transition: transform 0.2s ease;
         }
       }
 
       .mywork-toggle-button:focus {
-        outline: 3px solid rgba(0,255,153,0.18);
-        border-radius: 8px;
+        outline: none;
+      }
+      
+      .mywork-toggle-button:focus-visible {
+        outline: none;
       }
     }
 
-  .mywork-content {
-      margin-top: 1rem;
+    &:focus-within {
+      outline: 3px solid rgba(0,255,153,0.24);
+      border-color: #00ff99;
+    }
+
+    &.expanded .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .mywork-content {
+      padding: 0 1.2rem 1.5rem;
       font-size: 1rem;
       color: #e0e0e0;
 
@@ -176,7 +197,7 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .mywork-section{
+  .mywork-section {
     padding: 5rem 1rem;
   }
   .mywork-section .header h1 {
@@ -186,7 +207,13 @@
     padding: 0 0.5rem;
   }
   .mywork-section .mywork-card {
-    padding: 1rem 0.7rem;
+    .mywork-toggle-button {
+      padding: 1rem 0.7rem;
+      min-height: 3.5rem; // Larger touch target on mobile
+    }
+    
+    .mywork-content {
+      padding: 0 0.7rem 1rem;
+    }
   }
-  
 }
