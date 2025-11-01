@@ -45,7 +45,7 @@
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   padding: 1.5rem 1.2rem;
-  cursor: pointer;
+  cursor: default;
   transition: box-shadow 0.2s, background 0.2s;
   outline: none;
   border: 2px solid transparent;
@@ -60,16 +60,33 @@
   align-items: center;
   justify-content: space-between;
 }
-.mywork-section .mywork-card .mywork-header h2 {
+.mywork-section .mywork-card .mywork-header .mywork-toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+}
+.mywork-section .mywork-card .mywork-header .mywork-toggle-button h2 {
   font-size: 1.3rem;
   margin: 0;
   color: #00ff99;
 }
-.mywork-section .mywork-card .mywork-header .mywork-toggle {
+.mywork-section .mywork-card .mywork-header .mywork-toggle-button .toggle-icon {
   font-size: 1.2rem;
   color: #00ff99;
   margin-left: 1rem;
   user-select: none;
+  margin-left: 1rem;
+}
+.mywork-section .mywork-card .mywork-header .mywork-toggle-button:focus {
+  outline: 3px solid rgba(0, 255, 153, 0.18);
+  border-radius: 8px;
 }
 .mywork-section .mywork-card .mywork-content {
   margin-top: 1rem;
@@ -88,20 +105,51 @@
   text-decoration: none;
   font-weight: bold;
   transition: text-decoration 0.2s;
+  display: inline-flex;
+  align-items: center;
 }
 .mywork-section .mywork-card .mywork-content ul li a:hover {
   text-decoration: underline;
+}
+.mywork-section .mywork-card .mywork-content ul li a .external-icon {
+  margin-left: 0.4rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 .mywork-section .mywork-card .mywork-content ul li .repo-desc,
 .mywork-section .mywork-card .mywork-content ul li .book-desc {
   color: #bbb;
   font-size: 0.95rem;
   margin-left: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+.mywork-section .mywork-card .mywork-content ul li .truncate {
+  display: inline-block;
+  max-width: 60vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
 }
 .mywork-section .mywork-card.expanded {
   background: #222;
   box-shadow: 0 6px 24px rgba(0, 255, 153, 0.1);
   border-color: #00ff99;
+}
+
+.mywork-card .retry {
+  margin-left: 0.6rem;
+  background: transparent;
+  border: 1px solid #00ff99;
+  color: #00ff99;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.mywork-card .retry:focus {
+  outline: 3px solid rgba(0, 255, 153, 0.12);
 }
 
 /* Responsive */

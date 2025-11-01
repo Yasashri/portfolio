@@ -6,7 +6,7 @@ A personal portfolio web application for **Yasashri Medagedara**, a full-stack s
 
 ## 🌟 Features
 
-- **🏠 Home** – Introduction with avatar, animated status, and social links (Facebook, Medium, GitHub, LinkedIn, Amazon, Fiverr)
+ - **🏠 Home** – Introduction with avatar, animated status, and social links (Facebook, Medium, GitHub, LinkedIn, Behance, Fiverr)
 - **📄 Resume** – Downloadable professional and academic CVs with experience, skills, education, certifications, and awards
 - **🧑‍💻 My Work** – Interactive cards for Medium articles, GitHub repositories, and Amazon books
 - **📖 Stories** – Case studies and retrospectives (Creative Tribe, Pitarata.nz, Rural Food Store Ordering System)

@@ -51,7 +51,7 @@
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.18);
     padding: 1.5rem 1.2rem;
-    cursor: pointer;
+    cursor: default; // card itself is not the interactive element anymore
     transition: box-shadow 0.2s, background 0.2s;
     outline: none;
     border: 2px solid transparent;
@@ -67,21 +67,40 @@
       align-items: center;
       justify-content: space-between;
 
-      h2 {
-        font-size: 1.3rem;
-        margin: 0;
-        color: #00ff99;
+      .mywork-toggle-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        background: transparent;
+        border: none;
+        padding: 0;
+        text-align: left;
+        cursor: pointer;
+        color: inherit;
+
+        h2 {
+          font-size: 1.3rem;
+          margin: 0;
+          color: #00ff99;
+        }
+
+        .toggle-icon {
+          font-size: 1.2rem;
+          color: #00ff99;
+          margin-left: 1rem;
+          user-select: none;
+          margin-left: 1rem;
+        }
       }
 
-      .mywork-toggle {
-        font-size: 1.2rem;
-        color: #00ff99;
-        margin-left: 1rem;
-        user-select: none;
+      .mywork-toggle-button:focus {
+        outline: 3px solid rgba(0,255,153,0.18);
+        border-radius: 8px;
       }
     }
 
-    .mywork-content {
+  .mywork-content {
       margin-top: 1rem;
       font-size: 1rem;
       color: #e0e0e0;
@@ -98,9 +117,17 @@
             text-decoration: none;
             font-weight: bold;
             transition: text-decoration 0.2s;
+            display: inline-flex;
+            align-items: center;
 
             &:hover {
               text-decoration: underline;
+            }
+
+            .external-icon {
+              margin-left: 0.4rem;
+              font-size: 0.9rem;
+              opacity: 0.9;
             }
           }
 
@@ -109,6 +136,17 @@
             color: #bbb;
             font-size: 0.95rem;
             margin-left: 0.5rem;
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          .truncate {
+            display: inline-block;
+            max-width: 60vw;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: middle;
           }
         }
       }
@@ -120,6 +158,20 @@
       border-color: #00ff99;
     }
   }
+}
+
+.mywork-card .retry {
+  margin-left: 0.6rem;
+  background: transparent;
+  border: 1px solid #00ff99;
+  color: #00ff99;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.mywork-card .retry:focus {
+  outline: 3px solid rgba(0,255,153,0.12);
 }
 
 /* Responsive */

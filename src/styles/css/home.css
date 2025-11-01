@@ -6,24 +6,28 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  /* Utility: visually hidden */
 }
 .home__profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 600px;
+  max-width: 900px;
   width: 100%;
   padding: 2rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   border-radius: 20px;
   background-color: #252525;
+  position: relative;
+  z-index: 5;
 }
 .home__avatar-container {
   position: relative;
   width: 150px;
   height: 150px;
   margin-bottom: 1rem;
+  flex-shrink: 0;
 }
 .home__avatar {
   width: 100%;
@@ -69,17 +73,17 @@
   font-size: 1.5rem;
 }
 .home__socials .home__social-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   color: #e0e0e0;
-  transition: background 0.3s, color 0.3s;
-  border-radius: 50%;
+  transition: background 0.24s ease, color 0.24s ease, transform 0.18s ease;
+  border-radius: 12px;
   width: 48px;
   height: 48px;
-  background: rgba(0, 255, 139, 0.08);
-  font-size: 1.5em;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  background: rgba(0, 255, 139, 0.06);
+  font-size: 1.3em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
   text-decoration: none;
@@ -87,10 +91,13 @@
 .home__socials .home__social-link:hover, .home__socials .home__social-link:focus {
   background: #00ff8b;
   color: #252525;
-  outline: none;
+  transform: translateY(-3px);
 }
 .home__socials .home__social-link .home__social-name {
   display: none;
+  margin-left: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 .home__socials a {
   color: #e0e0e0;
@@ -145,6 +152,46 @@
     font-size: 1em;
     font-weight: 500;
   }
+}
+@media (min-width: 900px) {
+  .home .home {
+    padding: 2rem;
+  }
+  .home .home__profile {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 2rem;
+    padding: 3rem;
+  }
+  .home .home__avatar-container {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 0;
+  }
+  .home .home__name {
+    font-size: 2.4rem;
+  }
+  .home .home__socials {
+    justify-content: flex-start;
+    gap: 0.8rem;
+  }
+  .home .home__socials .home__social-link {
+    width: auto;
+    padding: 0.6rem 0.9rem;
+    border-radius: 10px;
+  }
+  .home .home__socials .home__social-link .home__social-name {
+    display: inline-block;
+  }
+}
+.home .sr-only {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
 }
 
 @media screen and (max-width: 768px) {

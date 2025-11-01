@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "../styles/scss/mywork.scss";
 import ScrollToTopButton from "../Components/ScrollToTopButton";
+import Spinner from "../Components/Spinner";
+import { FiExternalLink } from "react-icons/fi";
 
 type MediumPost = {
   title: string;
@@ -109,126 +111,134 @@ const MyWork = () => {
         </div>
         <div className='mywork-list'>
           {/* Medium Posts */}
-          <div
-            className={`mywork-card${
-              openSection === "medium" ? " expanded" : ""
-            }`}
-            onClick={() => handleToggle("medium")}
-            tabIndex={0}
-            role='button'
-            aria-expanded={openSection === "medium"}
-            onKeyDown={(e) =>
-              (e.key === "Enter" || e.key === " ") && handleToggle("medium")
-            }
-          >
-            <div className='mywork-header'>
-              <h2>Medium Blog Posts</h2>
-              <span className='mywork-toggle'>
-                {openSection === "medium" ? "▲" : "▼"}
-              </span>
-            </div>
-            {openSection === "medium" && (
-              <div className='mywork-content'>
-                {mediumLoading && <div className='my-loader'>Loading...</div>}
-                {mediumError && <div className='error'>{mediumError}</div>}
-                {!mediumLoading && !mediumError && (
-                  <ul>
-                    {mediumPosts.map((post, idx) => (
-                      <li key={idx}>
-                        <a
-                          href={post.link}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                        >
-                          {post.title}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            )}
-          </div>
-          {/* GitHub Repos */}
-          <div
-            className={`mywork-card${
-              openSection === "github" ? " expanded" : ""
-            }`}
-            onClick={() => handleToggle("github")}
-            tabIndex={0}
-            role='button'
-            aria-expanded={openSection === "github"}
-            onKeyDown={(e) =>
-              (e.key === "Enter" || e.key === " ") && handleToggle("github")
-            }
-          >
-            <div className='mywork-header'>
-              <h2>GitHub Public Repos</h2>
-              <span className='mywork-toggle'>
-                {openSection === "github" ? "▲" : "▼"}
-              </span>
-            </div>
-            {openSection === "github" && (
-              <div className='mywork-content'>
-                {githubLoading && <div className='my-loader'>Loading...</div>}
-                {githubError && <div className='error'>{githubError}</div>}
-                {!githubLoading && !githubError && (
-                  <ul>
-                    {githubRepos.map((repo, idx) => (
-                      <li key={idx}>
-                        <a
-                          href={repo.html_url}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                        >
-                          {repo.name}
-                        </a>
-                        <span className='repo-desc'> — {repo.description}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            )}
-          </div>
-          {/* Amazon Books */}
-          <div
-            className={`mywork-card${
-              openSection === "amazon" ? " expanded" : ""
-            }`}
-            onClick={() => handleToggle("amazon")}
-            tabIndex={0}
-            role='button'
-            aria-expanded={openSection === "amazon"}
-            onKeyDown={(e) =>
-              (e.key === "Enter" || e.key === " ") && handleToggle("amazon")
-            }
-          >
-            <div className='mywork-header'>
-              <h2>Amazon Books</h2>
-              <span className='mywork-toggle'>
-                {openSection === "amazon" ? "▲" : "▼"}
-              </span>
-            </div>
-            {openSection === "amazon" && (
-              <div className='mywork-content'>
+          <article className={`mywork-card${openSection === "medium" ? " expanded" : ""}`}>
+            <header className='mywork-header'>
+              <button
+                id='medium-toggle'
+                className='mywork-toggle-button'
+                aria-controls='medium-panel'
+                aria-expanded={openSection === "medium"}
+                onClick={() => handleToggle("medium")}
+              >
+                <h2>Medium Blog Posts</h2>
+                <span className='toggle-icon' aria-hidden>
+                  {openSection === "medium" ? "▲" : "▼"}
+                </span>
+              </button>
+            </header>
+            <div
+              id='medium-panel'
+              role='region'
+              aria-labelledby='medium-toggle'
+              hidden={openSection !== "medium"}
+              className='mywork-content'
+            >
+              {mediumLoading && <Spinner size={20} label="Loading Medium posts" />}
+              {mediumError && (
+                <div className='error'>
+                  <span>{mediumError}</span>
+                  <button className='retry' onClick={() => { setMediumPosts([]); setOpenSection("medium"); }}>
+                    Retry
+                  </button>
+                </div>
+              )}
+              {!mediumLoading && !mediumError && (
                 <ul>
-                  {amazonBooks.map((book, idx) => (
+                  {mediumPosts.map((post, idx) => (
                     <li key={idx}>
-                      <a
-                        href={book.url}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                      >
-                        {book.title}
+                      <a href={post.link} target='_blank' rel='noopener noreferrer'>
+                        {post.title}
+                        <FiExternalLink className='external-icon' aria-hidden />
                       </a>
-                      <span className='book-desc'> — {book.description}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          </article>
+          {/* GitHub Repos */}
+          <article className={`mywork-card${openSection === "github" ? " expanded" : ""}`}>
+            <header className='mywork-header'>
+              <button
+                id='github-toggle'
+                className='mywork-toggle-button'
+                aria-controls='github-panel'
+                aria-expanded={openSection === "github"}
+                onClick={() => handleToggle("github")}
+              >
+                <h2>GitHub Public Repos</h2>
+                <span className='toggle-icon' aria-hidden>
+                  {openSection === "github" ? "▲" : "▼"}
+                </span>
+              </button>
+            </header>
+            <div
+              id='github-panel'
+              role='region'
+              aria-labelledby='github-toggle'
+              hidden={openSection !== "github"}
+              className='mywork-content'
+            >
+              {githubLoading && <Spinner size={20} label="Loading GitHub repos" />}
+              {githubError && (
+                <div className='error'>
+                  <span>{githubError}</span>
+                  <button className='retry' onClick={() => { setGithubRepos([]); setOpenSection("github"); }}>
+                    Retry
+                  </button>
+                </div>
+              )}
+              {!githubLoading && !githubError && (
+                <ul>
+                  {githubRepos.map((repo, idx) => (
+                    <li key={idx}>
+                      <a href={repo.html_url} target='_blank' rel='noopener noreferrer'>
+                        {repo.name}
+                        <FiExternalLink className='external-icon' aria-hidden />
+                      </a>
+                      <span className='repo-desc'> — <span className='truncate'>{repo.description}</span></span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </article>
+          {/* Amazon Books */}
+          <article className={`mywork-card${openSection === "amazon" ? " expanded" : ""}`}>
+            <header className='mywork-header'>
+              <button
+                id='amazon-toggle'
+                className='mywork-toggle-button'
+                aria-controls='amazon-panel'
+                aria-expanded={openSection === "amazon"}
+                onClick={() => handleToggle("amazon")}
+              >
+                <h2>Amazon Books</h2>
+                <span className='toggle-icon' aria-hidden>
+                  {openSection === "amazon" ? "▲" : "▼"}
+                </span>
+              </button>
+            </header>
+            <div
+              id='amazon-panel'
+              role='region'
+              aria-labelledby='amazon-toggle'
+              hidden={openSection !== "amazon"}
+              className='mywork-content'
+            >
+              <ul>
+                {amazonBooks.map((book, idx) => (
+                  <li key={idx}>
+                    <a href={book.url} target='_blank' rel='noopener noreferrer'>
+                      {book.title}
+                      <FiExternalLink className='external-icon' aria-hidden />
+                    </a>
+                    <span className='book-desc'> — <span className='truncate'>{book.description}</span></span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
         </div>
       </div>
     </section>

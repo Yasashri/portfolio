@@ -1,7 +1,7 @@
 import ParticleBackground from "../Components/ParticleBackground";
 import { FaFacebookF, FaMediumM, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { TbBrandFiverr } from "react-icons/tb";
-import { SiAmazon } from "react-icons/si";
+import { SiBehance } from "react-icons/si";
 import "../styles/scss/home.scss";
 import Loader from "../Components/Loader";
 import { useEffect, useState } from "react";
@@ -22,7 +22,8 @@ const Home = () => {
         <div className='home__profile'>
           <div className='home__avatar-container'>
             <img src='my.jpg' alt='My Profile' className='home__avatar' />
-            <span className='home__status-dot' />
+            <span className='home__status-dot' aria-hidden="true" />
+            <span className='sr-only'>Available</span>
           </div>
           <div className='home__details'>
             <h1 className='home__name'>Yasashri Medagedara</h1>
@@ -31,7 +32,7 @@ const Home = () => {
               creating elegant, accessible interfaces.
             </p>
             <div className='home__socials'>
-              <a
+              {/* <a
                 href='https://www.facebook.com/yasashri/'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -39,7 +40,7 @@ const Home = () => {
               >
                 <FaFacebookF />
                 <span className='home__social-name'>Facebook</span>
-              </a>
+              </a> */}
               <a
                 href='https://medium.com/@ymedagedara'
                 target='_blank'
@@ -68,13 +69,13 @@ const Home = () => {
                 <span className='home__social-name'>LinkedIn</span>
               </a>
               <a
-                href='https://www.amazon.com/dp/B0FJR93HJ4'
+                href='https://www.behance.net/yasashri'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='home__social-link'
               >
-                <SiAmazon />
-                <span className='home__social-name'>Amazon</span>
+                <SiBehance />
+                <span className='home__social-name'>Behance</span>
               </a>
               <a
                 href='https://www.fiverr.com/yasasmedagedara'
