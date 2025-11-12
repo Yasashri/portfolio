@@ -1,3 +1,10 @@
+.resume-mobile-button-commons {
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
 .resume-section {
   background-color: #121212;
   padding: 3rem 1rem;
@@ -87,8 +94,19 @@
   .resume-section .contact-mobile a:hover {
     color: #00ff99;
   }
+  .resume-section .contact-mobile .whatsapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .resume-section .contact-mobile .whatsapp a {
+    margin-left: 5px;
+  }
   .resume-section .contact {
     display: none;
+  }
+  .resume-section .header .location {
+    margin-bottom: 10px;
   }
   .resume-section .header h1 {
     font-size: 2rem;

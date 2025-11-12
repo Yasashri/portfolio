@@ -2,6 +2,15 @@ import "../styles/scss/resume.scss";
 import { FaWhatsapp } from "react-icons/fa";
 import ScrollToTopButton from "../Components/ScrollToTopButton";
 
+const callFromResume = () => {
+  window.location.href = "tel:+886967372006";
+};
+const emailFromResume = () => {
+  window.location.href = "mailto:ymedagedara@gmail.com";
+};
+const whatsappFromResume = () => {
+  window.open("https://wa.me/94766521099", "_blank");
+};
 const Resume = () => {
   return (
     <section className='resume-section'>
@@ -22,16 +31,29 @@ const Resume = () => {
               +94 766521099
             </a>
           </p>
-           <p className='contact-mobile'>
-            <a href='tel:+886967372006'>📞 Call</a> &nbsp;| &nbsp;
-            <a href='mailto:ymedagedara@gmail.com'>✉️ Email</a>
-            &nbsp;|&nbsp;
-            <FaWhatsapp />
-            &nbsp;
-            <a href='https://wa.me/94766521099' target='_blank'>
-              Whatsapp
-            </a>
-          </p>
+          <div className='contact-mobile'>
+            <div
+              className='call resume-mobile-button-commons'
+              onClick={callFromResume}
+            >
+              <a href='tel:+886967372006'>📞 Call</a>
+            </div>
+            <div
+              className='email resume-mobile-button-commons'
+              onClick={emailFromResume}
+            >
+              <a href='mailto:ymedagedara@gmail.com'>✉️ Email</a>
+            </div>
+            <div
+              className='whatsapp resume-mobile-button-commons'
+              onClick={whatsappFromResume}
+            >
+              <FaWhatsapp />
+              <a href='https://wa.me/94766521099' target='_blank'>
+                Whatsapp
+              </a>
+            </div>
+          </div>
           <div className='links'>
             <a
               href='/Yasashri_Medagedara_cv.pdf'
@@ -40,7 +62,7 @@ const Resume = () => {
             >
               Download Professional Resume (PDF)
             </a>
-            <span className="cvseparator"> | </span>
+            <span className='cvseparator'> | </span>
             <a
               href='/Yasashri_Medagedara_academic_cv.pdf'
               target='_blank'
